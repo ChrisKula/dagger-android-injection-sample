@@ -10,6 +10,8 @@
         tools:context=".home.ui.HomeActivity">
 
     <TextView
+            android:textColor="@android:color/white"
+            tools:text="Placeholder common"
             android:id="@+id/commonHelloWorld"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -19,6 +21,8 @@
             android:layout_height="wrap_content"/>
 
     <TextView
+            android:textColor="@android:color/white"
+            tools:text="Placeholder home"
             android:id="@+id/homeHelloWorld"
             app:layout_constraintTop_toBottomOf="@id/commonHelloWorld"
             app:layout_constraintBottom_toBottomOf="parent"
