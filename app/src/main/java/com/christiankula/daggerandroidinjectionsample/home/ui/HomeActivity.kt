@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.christiankula.daggerandroidinjectionsample.R
 import com.christiankula.daggerandroidinjectionsample.common.CommonHelloWorldService
+import com.christiankula.daggerandroidinjectionsample.home.HomeHelloWorldService
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.content_home.*
@@ -16,6 +17,9 @@ class HomeActivity : AppCompatActivity() {
 
     @Inject
     lateinit var commonHelloWorldService: CommonHelloWorldService
+
+    @Inject
+    lateinit var homeHelloWorldService: HomeHelloWorldService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -29,10 +33,15 @@ class HomeActivity : AppCompatActivity() {
         }
 
         sayCommonHelloWorld()
+        sayHomeHelloWorld()
     }
 
     private fun sayCommonHelloWorld() {
         commonHelloWorld.text = commonHelloWorldService.getHelloWorld()
+    }
+
+    private fun sayHomeHelloWorld() {
+        homeHelloWorld.text = homeHelloWorldService.getHelloWorld()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
